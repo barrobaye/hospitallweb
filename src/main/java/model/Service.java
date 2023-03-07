@@ -1,5 +1,6 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,10 +16,10 @@ public class Service {
     private String libelle;
 
 
-    @OneToMany(mappedBy = "service")
-
+    @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     List<Medecin> medecins;
 
-    @OneToMany(mappedBy = "service")
+     @JsonIgnore
+    @OneToMany(mappedBy = "service",fetch = FetchType.LAZY)
     List<Specialite> specialites;
 }

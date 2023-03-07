@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+
 @Entity
 @Data
 public class Medecin {
@@ -23,16 +24,16 @@ public class Medecin {
     @Temporal(TemporalType.DATE)
     private Date dateembauche;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service")
     private Service service;
 
 
     @JoinTable(
-            name = "medcin_specialite",
+            name = "medecin_specialite",
             joinColumns = @JoinColumn(name = "specialite"),
-            inverseJoinColumns = @JoinColumn(name = "medcin")
+            inverseJoinColumns = @JoinColumn(name = "medecin")
     )
-    @ManyToMany(cascade = {CascadeType.PERSIST , CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.PERSIST , CascadeType.MERGE },fetch = FetchType.LAZY)
     private List<Specialite> specialites;
 }

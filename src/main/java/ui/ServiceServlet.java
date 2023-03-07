@@ -1,5 +1,6 @@
 package ui;
 
+import lombok.SneakyThrows;
 import service.IService;
 import service.ServiceService;
 
@@ -24,7 +25,15 @@ public class ServiceServlet extends HttpServlet {
 
     }
 
+    @SneakyThrows
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try{
+            request.setAttribute("service", iService.findAll());
+            getServletContext().getRequestDispatcher("/WEB-INF/pages/service/listservice.jsp")
+                    .forward(request,response);
+        }catch (Exception e){
+            throw e;
+        }
 
     }
 }

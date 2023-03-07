@@ -14,7 +14,6 @@ public class ServiceService extends AbstractFacade <Service> implements  IServic
 
     @Override
     public Session getSession() {
-
       return session= HibernateUtil.getSession();
 
     }

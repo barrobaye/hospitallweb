@@ -24,7 +24,7 @@
 
                 <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-                    <form style="width: 23rem;" method="Post" action="/hospitallweb/user">
+                    <form style="width: 23rem;" method="Post" action="/hospitallweb_war/user">
 
                         <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
 

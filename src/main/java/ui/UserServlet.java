@@ -20,6 +20,8 @@ public class UserServlet extends HttpServlet {
         super.init();
         iUser = new UserService();
     }
+
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{

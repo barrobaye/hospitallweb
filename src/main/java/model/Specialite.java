@@ -1,10 +1,9 @@
 package model;
-
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
+
 @Entity
 @Data
 public class Specialite {
@@ -15,8 +14,8 @@ public class Specialite {
     @Column(length = 50)
     private String libelle;
 
-
-    @ManyToMany(mappedBy = "specialites")
+@JsonIgnore
+    @ManyToMany(mappedBy = "specialites",fetch = FetchType.LAZY)
     private List<Medecin> medecins;
 
 

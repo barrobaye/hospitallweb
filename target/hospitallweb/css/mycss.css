@@ -1,0 +1,26 @@
+body{
+    background-color: #7F7F7F;
+}
+.bntsp{
+    border: none;
+    background-color: cadetblue;
+}
+.bntsev{
+    border: none;
+    background-color: #146c43;
+}
+.bntmd{
+    border: none;
+    background-color:#04414d;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+h1{
+    width: auto;
+    margin-top: 49px;
+    height: auto;
+    display: flex;
+}
